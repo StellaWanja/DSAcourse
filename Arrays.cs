@@ -92,9 +92,9 @@ namespace DataStructuresAlgos
             }
             else
             {
-                for(int i=position-1; i<size; i++)
+                for (int i = position - 1; i < size; i++)
                 {
-                    arrayNum[i] = arrayNum[i+1];
+                    arrayNum[i] = arrayNum[i + 1];
                 }
                 for (int m = 0; m < size; m++)
                 {
@@ -102,5 +102,37 @@ namespace DataStructuresAlgos
                 }
             }
         }
+        //pointer holds address, not value
+
+        //2D ARRAYS/matrix
+        //eg [2,1,3
+        //    4,5,6
+        //    7,8,9]
+        public static void TwoDimensionalArrayTraverse()
+        {
+            int[,] array = new int[4, 2] { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };//two-dimensional array of four rows and two columns
+            //[1,2   //array[0,0], array[0,1]
+            //3,4   // array[1,0], array[1,1]
+            //5,6    //array[2,0], array[2,1]
+            //7,8]   //array[3,0], array[3,1]
+            //traverse row first
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                //then traverse column
+                for(int j=0; j< array.GetLength(1); j++)
+                {
+                    Console.WriteLine(array[i, j]);
+                }
+            }
+        }
+        //Implementation of 2D array uses:
+        // 1. Row major
+        // 2. Column major
+        //eg [1,2,3
+        //    4,5,6]
+        //In Row major method, data is stored as
+        // [1,2,3][4,5,6] - 2 rows
+        //In Column major method, data is stored as
+        // [1,4][2,5][3,6] - 3 columns
     }
 }

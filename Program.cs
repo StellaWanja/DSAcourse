@@ -6,7 +6,7 @@ namespace DataStructuresAlgos
     {
         static void Main(string[] args)
         {
-            Arrays.ArrayDeletionMethod();
+            LinkedList.print();
         }
     }
 }
