@@ -240,7 +240,36 @@ namespace DataStructuresAlgos
         }
     }
 
+    public class ReverseSinglyLinkedList
+    {
+        //in reversing, link changes from pointing to next address to pointing to the previous address
+        public MainNode head;
+        public ReverseSinglyLinkedList()
+        {
+            head = null;
+        }
+        public void ReverseSLinkedList()
+        {
+            if (head != null)
+            {
+                MainNode prevNode = null;
+                MainNode nextNode = head;
+                MainNode currentNode = head;
+                //eg 10|200 -> 20|300 -> 30|400 -> 40|500 -> 50|0
+                while (currentNode != null)
+                {
+                    nextNode = nextNode.next; //hold pointer 200
+                    currentNode.next = prevNode; //hold null - remove pointer to 200 and point to prev node
+                    prevNode = currentNode; //currentnode = prevnode = 10
+                    currentNode = nextNode; // hold 20 and iterate forward
+                }
+                head = prevNode;
+            }
+        }
+    }
 
+
+    //FINISH WITH DOUBLY AND CIRCULAR LINKED LISTS
     //test the code
     class LinkedListFunctions
     {
